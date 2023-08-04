@@ -8,133 +8,138 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-4bw+/aepP/YC94hEpVNVgiZdgIC5+VKNBQNGCHeKRQN+PtmoHDEXuppvnDJzQIu9" crossorigin="anonymous">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.5/font/bootstrap-icons.css">
+    <link rel="stylesheet" src="style.css">
 </head>
 
 
 <body>
-<div class="container">
-    <div class="card mt-5">
-        <div class="card-header p-3">
-            <h5>Payment form example</h5>
+
+    <div class="container">
+        <div class="card mt-5">
+            <div class="card-header p-3">
+                <h5>Payment form example</h5>
+            </div>
+            <div class="card-body">
+                <div id="alert" class="alert alert-danger p-2 fw-medium" role="alert" style="visibility: hidden;">
+                    Some fields are missing
+                </div>
+
+                <form onsubmit="formValidation(event)" class="row g-3">
+                    <div class="col-4">
+                        <label for="inputCardNumber" class="form-label">Card Number</label>
+                        <input  type="text" class="form-control" id="inputCardNumber"
+                            placeholder="XXXXXX XXXXXXX XXXXX">
+                    </div>
+
+                    <div class="col-4">
+                        <label for="inputCVC" class="form-label">CVC #</label>
+                        <input  type="text" class="form-control" id="inputCVC" placeholder="0000" >
+                    </div>
+
+                    <div class="col-4">
+                        <label for="inputAmount" class="form-label">Amount</label>
+                        <input type="number" class="form-control" id="inputAmount" placeholder="Amount">
+                    </div>
+
+
+
+                    <div class="col-6">
+                        <label for="inputFirstName" class="form-label">First Name</label>
+                        <input type="text" class="form-control" id="inputFirstName">
+                    </div>
+                    <div class="col-6">
+                        <label for="inputLastName" class="form-label">Last Name</label>
+                        <input type="text" class="form-control" id="inputLastName">
+                    </div>
+
+
+
+
+
+                    <div class="col-6">
+                        <label for="inputCity" class="form-label">City</label>
+                        <input type="text" class="form-control" id="inputCity">
+                    </div>
+
+                    <div class="col-4">
+                        <label for="inputState" class="form-label">State</label>
+                        <select id="inputState" class="form-select">
+                            <option selected>Choose...</option>
+                            <option>Melo</option>
+                            <option>Rio Branco</option>
+                            <option> Fraile Muerto</option>
+                        </select>
+                    </div>
+
+                    <div class="col-2">
+                        <label for="inputZip" class="form-label">Postal Code</label>
+                        <input type="text" class="form-control" id="inputZip">
+                    </div>
+
+
+
+                    <div class="col-3">
+
+                        <label for="inputZip" class="form-label">We accept</label>
+                        <div class="border rounded bg-secondary p-2">
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
+                                <label class="form-check-label" for="inlineCheckbox1"><i
+                                        class="bi bi-credit-card"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2"><i
+                                        class="bi bi-credit-card-2-back-fill"></i></label>
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2"><i
+                                        class="bi bi-credit-card-2-back-fill"></i></label>
+
+                            </div>
+                            <div class="form-check form-check-inline">
+                                <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
+                                <label class="form-check-label" for="inlineCheckbox2"><i
+                                        class="bi bi-credit-card-2-back-fill"></i></label>
+
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="col-3"> </div>
+
+                    <div class="col-6">
+                        <div class="mb-3">
+                            <label for="message-text" class="col-form-label">Message:</label>
+                            <textarea class="form-control" id="message-text"></textarea>
+                        </div>
+                    </div>
+
+            </div>
+
+
+            <div class="card-footer text-body-secondary bg-secondary bg-opacity-25 p-2 d-flex flex-row-reverse">
+
+                <button href="#" class="btn btn-primary" type="submit">Send</button>
+                <button href="#" class="btn btn-secondary">Cancel</button>
+
+
+            </div>
+
+            </form>
+
         </div>
-        <div class="card-body">
-            <div class="alert alert-danger" role="alert">
-                Some fields are missing
-            </div>
-
-            <form class="row g-3">
-                <div class="col-4">
-                    <label for="inputEmail4" class="form-label">Card </label>
-                    <input type="email" class="form-control" id="inputEmail4" placeholder="XXXXXX XXXXXXX XXXXX">
-                </div>
-
-                <div class="col-4">
-                    <label for="inputPassword4" class="form-label">CVC #</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="0000">
-                </div>
-
-                <div class="col-4">
-                    <label for="inputPassword4" class="form-label">Amount</label>
-                    <input type="password" class="form-control" id="inputPassword4" placeholder="Amount">
-
-                </div>
-
-
-
-
-                <div class="col-6">
-                    <label for="inputAddress" class="form-label">First Name</label>
-                    <input type="text" class="form-control" id="inputAddress">
-                </div>
-                <div class="col-6">
-                    <label for="inputAddress2" class="form-label">Last Name</label>
-                    <input type="text" class="form-control" id="inputAddress2">
-                </div>
-
-
-
-
-
-
-                <div class="col-6">
-                    <label for="inputCity" class="form-label">City</label>
-                    <input type="text" class="form-control" id="inputCity">
-                </div>
-
-                <div class="col-4">
-                    <label for="inputState" class="form-label">State</label>
-                    <select id="inputState" class="form-select">
-                        <option selected>Choose...</option>
-                        <option>...</option>
-                    </select>
-                </div>
-
-                <div class="col-2">
-                    <label for="inputZip" class="form-label">Postal Code</label>
-                    <input type="text" class="form-control" id="inputZip">
-                </div>
-                
-        
-
-
-            <div class="col-3">
-            
-                <label for="inputZip" class="form-label">We accept</label>
-                <div class="border rounded bg-secondary p-2"> 
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox1" value="option1">
-                    <label class="form-check-label" for="inlineCheckbox1"><i class="bi bi-credit-card"></i></label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2"><i
-                            class="bi bi-credit-card-2-back-fill"></i></label>
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2"><i
-                            class="bi bi-credit-card-2-back-fill"></i></label>
-
-                </div>
-                <div class="form-check form-check-inline">
-                    <input class="form-check-input" type="checkbox" id="inlineCheckbox2" value="option2">
-                    <label class="form-check-label" for="inlineCheckbox2"><i
-                            class="bi bi-credit-card-2-back-fill"></i></label>
-
-                </div>
-            </div>
-            </div>
-
-            <div class="col-3"> </div>
-
-                <div class="col-6">
-                <div class="mb-3">
-                    <label for="message-text" class="col-form-label">Message:</label>
-                    <textarea class="form-control" id="message-text"></textarea>
-                </div>
-</div>
-
-        </div>
-
-        </form>
-
-
-  
-
-
-    <div class="card-footer text-body-secondary bg-secondary bg-opacity-25 p-2 d-flex flex-row-reverse">
-        <a href="#" class="btn btn-secondary">Cancel</a>
-        <a href="#" class="btn btn-primary">Send</a>
 
     </div>
-    </div>
-
-</div>
 
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.1/dist/js/bootstrap.bundle.min.js"
         integrity="sha384-HwwvtgBNo3bZJJLYd8oVXjrBZt8cqVSpeBNS5n7C8IVInixGAoxmnlMuBnhbgrkm"
         crossorigin="anonymous"></script>
+
+    <script src="index.js"></script>
+
 </body>
 
 </html>
